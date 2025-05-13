@@ -30,7 +30,7 @@
 
 ## 📌 Current Projects
 
-- **💳 Paykasma** — Custom bKash Payment Gateway (Laravel + Filament)
+- **💳 SSLCommerce** — Custom bKash Payment Gateway (Laravel + Filament)
 - **🚀 FPV Flight Controller** — ESP32-based controller integrated with DJI N1 middleware
 - **📖 Bengali Quran LLM** — Training a Quranic language model fine-tuning DeepSeek
 - **🎮 Ludo King API** — Public game integration service
@@ -62,8 +62,8 @@
 
 ## 📬 Connect With Me
 
-- 📧 **Email:** soha.gislam0@gmail.com  
-- 📷 **Instagram:** [@sohag.islam_0](https://instagram.com/sohagsrz)  
+- 📧 **Email:** mdsohagislam25@gmail.com  
+- 📷 **Instagram:** [@sohagsrz](https://instagram.com/sohagsrz)  
 - 🎥 **YouTube:** [Md Sohag Islam](https://www.youtube.com/@sohagsrz)  
 - 🌐 **Portfolio/Blog:** *Coming soon!*
 
