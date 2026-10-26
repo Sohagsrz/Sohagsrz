@@ -920,14 +920,110 @@
             gap: 20px;
         }
 
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .gallery-card {
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            border-radius: 18px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--border-hover);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6), 0 0 25px -5px rgba(99, 102, 241, 0.25);
+        }
+
+        .gallery-img-wrap {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            background: #0d1527;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .gallery-card:hover .gallery-img {
+            transform: scale(1.06);
+        }
+
+        .gallery-badge {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: rgba(10, 16, 30, 0.85);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: var(--primary-light);
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .gallery-content {
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex: 1;
+        }
+
+        .gallery-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .gallery-desc {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+
+        .gallery-links {
+            margin-top: auto;
+            display: flex;
+            gap: 14px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .gallery-card-wide {
+            grid-column: 1 / -1;
+        }
+
+        .gallery-banner-wrap {
+            height: 200px;
+        }
+
         /* Responsive Breakpoints */
         @media (max-width: 1024px) {
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
             .grid-4 { grid-template-columns: repeat(2, 1fr); }
             .grid-3 { grid-template-columns: repeat(2, 1fr); }
             .stats-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 768px) {
+            .gallery-grid { grid-template-columns: 1fr; }
+            .gallery-card-wide { grid-column: 1; }
+            .gallery-banner-wrap { height: 160px; }
             .hero h1 { font-size: 2.4rem; }
             .grid-2 { grid-template-columns: 1fr; }
             .grid-3 { grid-template-columns: 1fr; }
@@ -958,6 +1054,7 @@
 
                 <ul class="nav-links">
                     <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#gallery" class="nav-link">Gallery</a></li>
                     <li><a href="#packages" class="nav-link">Packages</a></li>
                     <li><a href="#projects" class="nav-link">Projects</a></li>
                     <li><a href="#skills" class="nav-link">Tech Stack</a></li>
@@ -980,7 +1077,7 @@
         <header class="hero" id="home">
             <div class="avatar-container">
                 <div class="avatar-glow">
-                    <img src="https://avatars.githubusercontent.com/u/39012004?v=4" alt="Md Sohag Islam" class="avatar-img" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Sohag+Islam&background=6366f1&color=fff&size=200';">
+                    <img src="assets/images/sohag-github.jpg" alt="Md Sohag Islam" class="avatar-img" onerror="this.onerror=null; this.src='https://avatars.githubusercontent.com/u/39012004?v=4';">
                 </div>
                 <div class="avatar-badge">
                     <span class="status-dot"></span> Building in 2026
@@ -1113,7 +1210,81 @@
             </div>
         </section>
 
-        <!-- Packagist Published Packages Section -->
+        <!-- Visual Profile & Online Media Section -->
+        <section id="gallery" style="padding: 60px 0;">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-camera"></i> Verified Presence</span>
+                <h2 class="section-title">Visual Profile & Snapshots</h2>
+                <p class="section-desc">Authentic snapshots, verified profile avatars, and developer media from across my official channels.</p>
+            </div>
+
+            <div class="gallery-grid">
+                <!-- Image Card 1: Studio / Creator Portrait -->
+                <div class="glass-card gallery-card">
+                    <div class="gallery-img-wrap">
+                        <img src="assets/images/sohag-youtube.jpg" alt="Md Sohag Islam - Lead Software Engineer" class="gallery-img" loading="lazy">
+                        <span class="gallery-badge"><i class="fas fa-video"></i> Tech Creator</span>
+                    </div>
+                    <div class="gallery-content">
+                        <h3 class="gallery-title">Md Sohag Islam</h3>
+                        <p class="gallery-desc">Full-Stack Software Engineer & content creator authoring deep-dive engineering tutorials on YouTube.</p>
+                        <div class="gallery-links">
+                            <a href="https://youtube.com/@SohagSrz" target="_blank" class="pkg-btn-link"><i class="fab fa-youtube" style="color: #ff0000;"></i> @SohagSrz</a>
+                            <a href="https://sohag.xyz" target="_blank" class="pkg-btn-link"><i class="fas fa-globe" style="color: #00c853;"></i> sohag.xyz</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Card 2: GitHub Open Source Profile -->
+                <div class="glass-card gallery-card">
+                    <div class="gallery-img-wrap">
+                        <img src="assets/images/sohag-github.jpg" alt="Md Sohag Islam - GitHub Profile" class="gallery-img" loading="lazy">
+                        <span class="gallery-badge"><i class="fab fa-github"></i> Open Source</span>
+                    </div>
+                    <div class="gallery-content">
+                        <h3 class="gallery-title">GitHub Developer</h3>
+                        <p class="gallery-desc">Maintaining 90+ public repositories, open-source AI tools, and composer packages on GitHub and Packagist.</p>
+                        <div class="gallery-links">
+                            <a href="https://github.com/sohagsrz" target="_blank" class="pkg-btn-link"><i class="fab fa-github"></i> sohagsrz</a>
+                            <a href="https://packagist.org/packages/sohagsrz/" target="_blank" class="pkg-btn-link"><i class="fas fa-box" style="color: #f28d1a;"></i> Packagist</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Card 3: Professional Verified Portrait -->
+                <div class="glass-card gallery-card">
+                    <div class="gallery-img-wrap">
+                        <img src="assets/images/sohag-gravatar.jpg" alt="Md Sohag Islam - Verified Profile" class="gallery-img" loading="lazy">
+                        <span class="gallery-badge"><i class="fas fa-shield-alt"></i> Verified Portrait</span>
+                    </div>
+                    <div class="gallery-content">
+                        <h3 class="gallery-title">AI & Systems Explorer</h3>
+                        <p class="gallery-desc">AIUB Computer Science alumni, researching low-resource Bengali NLP, autonomous agents, and FPV drone firmware.</p>
+                        <div class="gallery-links">
+                            <a href="https://linkedin.com/in/sohagsrz" target="_blank" class="pkg-btn-link"><i class="fab fa-linkedin" style="color: #0077b5;"></i> LinkedIn</a>
+                            <a href="https://x.com/sohagsrz" target="_blank" class="pkg-btn-link"><i class="fab fa-x-twitter"></i> @sohagsrz</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Card 4: Wide Tech Brand Banner -->
+                <div class="glass-card gallery-card gallery-card-wide">
+                    <div class="gallery-img-wrap gallery-banner-wrap">
+                        <img src="assets/images/sohag-banner.jpg" alt="Md Sohag Islam - Channel Branding Banner" class="gallery-img" loading="lazy">
+                        <span class="gallery-badge"><i class="fas fa-broadcast-tower"></i> Developer Channel</span>
+                    </div>
+                    <div class="gallery-content">
+                        <h3 class="gallery-title">Engineering Media & Technical Hub</h3>
+                        <p class="gallery-desc">Sharing programming guides, advanced backend patterns, web scraping architecture, and embedded IoT drone telemetry experiments.</p>
+                        <div class="gallery-links">
+                            <a href="https://youtube.com/@SohagSrz" target="_blank" class="pkg-btn-link"><i class="fab fa-youtube" style="color: #ff0000;"></i> YouTube Channel</a>
+                            <a href="https://facebook.com/sohagsrz" target="_blank" class="pkg-btn-link"><i class="fab fa-facebook" style="color: #1877f2;"></i> Facebook Profile</a>
+                            <a href="https://gumroad.com/sohagsrz" target="_blank" class="pkg-btn-link"><i class="fas fa-store" style="color: #ff90e8;"></i> Gumroad Store</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section id="packages" style="padding: 60px 0;">
             <div class="section-header">
                 <span class="section-tag"><i class="fas fa-box-open"></i> Open Source Packages</span>
